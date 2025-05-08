@@ -43,6 +43,14 @@ jobs:
           echo npm test
 
       # Add here the upload-artifact action
+      - shell: bash
+        run: |
+          echo 'Test upload artifact' > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-log-file
+          path: output.log
       
 
   # If both linting and CI succeeds we want to deploy the code to a test environment
