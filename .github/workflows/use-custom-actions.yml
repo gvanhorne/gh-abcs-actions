@@ -34,6 +34,12 @@ jobs:
           joke: ${{steps.jokes.outputs.joke-output}}
           issue-title: "A joke for you from custom actions workflow"      
 
+      - name: Hello world action step
+        id: hello
+        uses: gvanhorne/hello-world-javascript-action@v1.3
+        with:
+          who-to-greet: "Mona the Octocat"
+
   docker-custom-actions:
     runs-on: ubuntu-latest
 
